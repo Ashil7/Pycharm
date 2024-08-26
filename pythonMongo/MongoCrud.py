@@ -11,7 +11,6 @@ def create():
     addr=input("Enter Address:")
     phone=input("Enter Phone Number:")
     pwd=input("Enter Password:")
-    print("helloo")
 
     dict={
         'name': name,
