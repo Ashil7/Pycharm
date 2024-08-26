@@ -1,0 +1,5 @@
+tuple1=(22,21,654,23,432)
+print(tuple1)
+l=list(tuple1)
+l.sort()
+print(l[-2])

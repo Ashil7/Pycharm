@@ -1,0 +1,2 @@
+a="This really amaing.......wow"
+print (a.swapcase())
