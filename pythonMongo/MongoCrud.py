@@ -6,7 +6,7 @@ db=client['Db_info']
 col=db['info']
 
 col.create_index("phone", unique=True)
-def create():
+def create(): #Insert data
     name=input("Enter Username:")
     addr=input("Enter Address:")
     phone=input("Enter Phone Number:")
@@ -19,11 +19,11 @@ def create():
         'Password': pwd
     }
     try:
-        x=col.insert_one(dict)
+        col.insert_one(dict)
         print("Data inserted!!")
     except errors.DuplicateKeyError:
         print(f"Error: Phone number {phone} already is use.")
-def update():
+def update():#update data
     phone=input("Enter Phone number:")
     query={"phone":phone}
     x=col.find_one(query)
@@ -57,7 +57,7 @@ def update():
             exit()
         else:
             print("Invalid choice!!")
-def delete():
+def delete(): #delete record
     phn=input("Enter phone number:")
     query={'phone':phn}
     result=col.find_one(query)
@@ -66,7 +66,7 @@ def delete():
         print("Record deleted!!")
     else:
         print("Record not found!!")
-def read():
+def read(): #view data
     phn = input("Enter phone number:")
     query = {'phone': phn}
     result=col.find_one(query)
